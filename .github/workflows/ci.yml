@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 4
     strategy:
       fail-fast: false
       matrix:
@@ -36,6 +37,7 @@ jobs:
     # 5.50.0 is the DECLARED minimum in the `webui` extra (gradio>=5.50.0,<7),
     # so the matrix tests the actual floor, not just a mid-version.
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     strategy:
       fail-fast: false
       matrix:
@@ -52,6 +54,7 @@ jobs:
 
   docs:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
